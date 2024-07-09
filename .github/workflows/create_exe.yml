@@ -30,7 +30,7 @@ jobs:
 
     - name: Build EXE
       run: |
-        pyinstaller --onefile --name converter converter.py  
+        pyinstaller --onefile --noconsole --name converter converter.py  
 
     - name: Upload artifact
       uses: actions/upload-artifact@v3
