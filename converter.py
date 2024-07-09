@@ -124,10 +124,14 @@ def main(page: ft.Page):
                     ft.dropdown.Option(".json"),
                     ft.dropdown.Option(".yml"),
                     ft.dropdown.Option(".yaml")
-                ])
+                ],
+                value=".xml")
             ]),
             ft.ElevatedButton("Convert", on_click=on_convert)
         ])
     )
 
 ft.app(target=main)
+
+
+#pyinstaller.exe --onefile --noconsole converter.py
