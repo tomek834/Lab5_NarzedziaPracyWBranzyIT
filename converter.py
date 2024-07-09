@@ -31,7 +31,7 @@ def write_file(data, file_path, output_format):
                 child.text = str(val)
             return elem
 
-        root = dict_to_xml('root', data)  # Główny element XML
+        root = dict_to_xml('root', data)
         tree = ET.ElementTree(root)
         tree.write(file_path, encoding='utf-8', xml_declaration=True)
 
@@ -42,7 +42,7 @@ def convert_file(input_path, output_path, input_format, output_format):
 def main(page: ft.Page):
     input_file_path = ft.Ref[ft.TextField]()
     output_dir_path = ft.Ref[ft.TextField]()
-    output_file_name = ft.Ref[ft.TextField]()  # Dodane pole tekstowe
+    output_file_name = ft.Ref[ft.TextField]()
     output_format = ft.Ref[ft.Dropdown]()
 
     file_picker = ft.FilePicker(on_result=lambda e: on_file_picked(e, input_file_path))
