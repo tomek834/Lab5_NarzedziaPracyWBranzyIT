@@ -23,14 +23,13 @@ def write_file(data, file_path, output_format):
         with open(file_path, 'w', encoding='utf-8') as file:
             yaml.dump(data, file, allow_unicode=True)
     elif output_format == '.xml':
-        # Konwersja słownika na XML
         def dict_to_xml(tag, d):
             elem = ET.Element(tag)
             for key, val in d.items():
                 child = ET.SubElement(elem, key)
                 child.text = str(val)
             return elem
-
+#TODO: sprawdzić czy znaczik <root> jest niezbędny
         root = dict_to_xml('root', data)
         tree = ET.ElementTree(root)
         tree.write(file_path, encoding='utf-8', xml_declaration=True)
